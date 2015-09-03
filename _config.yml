@@ -1,8 +1,7 @@
 # Setup
 
 title:            		select64
-url: 					http://josephfusco.github.io/
-baseurl: 				select64
+baseurl: 				http://josephfusco.github.io/select64
 collections:
  - icons
 
