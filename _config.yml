@@ -1,0 +1,18 @@
+# Setup
+
+title:            		select64
+url:
+baseurl:
+collections:
+ - icons
+
+# Dependencies
+
+markdown:         		redcarpet
+highlighter:      		pygments
+
+# SCSS
+
+sass:
+  sass_dir: _sass
+  style: :compressed

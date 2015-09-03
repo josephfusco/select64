@@ -1,0 +1,26 @@
+// Sidebar
+
+.sidebar {
+	height: 100%;
+	width: $sidebar-width;
+	background: $color--sidebar-bg;
+	color: $color--sidebar-txt;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+	text-align: center;
+
+    a {
+    	color: $color--sidebar-txt;
+
+    	&:hover,
+    	&:focus {
+			color: $white;
+    	}
+    }
+
+    ul {
+    	list-style-type: none;
+    	padding: 0;
+    }
+}
