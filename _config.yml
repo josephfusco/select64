@@ -1,9 +1,7 @@
 # Setup
 
 title:            		select64
-port:    				4000
-host:    				127.0.0.1
-baseurl: 				http://josephfusco.github.io/select64
+baseurl: 				/select64
 
 permalink:           	pretty
 relative_permalinks: 	true
