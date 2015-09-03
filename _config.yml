@@ -1,7 +1,7 @@
 # Setup
 
 title:            		select64
-url:
+url: 					http://josephfus.co/
 baseurl:
 collections:
  - icons
