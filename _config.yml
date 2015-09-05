@@ -1,7 +1,7 @@
 # Setup
 
 title:            		select64
-baseurl: 				/select64
+baseurl: 				""
 
 permalink:           	pretty
 relative_permalinks: 	true
