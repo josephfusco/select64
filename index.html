@@ -3,4 +3,16 @@ layout: default
 title: Home
 ---
 
-<h1>main content area</h1>
+<ul>
+{% for icon in site.icons %}
+	<li>
+
+		<div class="item-wrap">
+
+			<div class="icon" id="{{ icon.name }}">{{ icon.content }}</div>
+
+		</div>
+
+	</li>
+{% endfor %}
+</ul>

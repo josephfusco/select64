@@ -1,14 +1,28 @@
 // Sidebar
 
-.sidebar {
+#sidebar {
 	height: 100%;
 	width: $sidebar-width;
-	background: $color--sidebar-bg;
+	background-color: $color--sidebar-bg;
 	color: $color--sidebar-txt;
     position: fixed;
     bottom: 0;
     top: 0;
 	text-align: center;
+    line-height: 1.6;
+    padding: 0 15px;
+    overflow-y: auto;
+
+    h1 {
+        margin-bottom: 0;
+        font-weight: 300;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 300;
+    }
 
     a {
     	color: $color--sidebar-txt;
@@ -23,4 +37,8 @@
     	list-style-type: none;
     	padding: 0;
     }
+}
+
+#preview {
+    margin-top: 20px;
 }
