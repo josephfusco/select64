@@ -19,8 +19,12 @@
 		}
 	})
 
+	$('#icon_color').bind('click focus', function() {
+		$('.colorpicker').css('display', 'block');
+	})
+
 	// open the color picker when the color preview is clicked
-	$('.color-view').click(function() {
+	$('.color-view').bind('click focus', function() {
 		$('#icon_color').trigger('click');
 	})
 
@@ -28,11 +32,14 @@
 	$(document).ready(function() {
 		icon.removeAttr('xmlns');
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
 	})
 
 	// when icon size is changed
-	$("#icon_size").bind('keyup mouseup', function() {
+	$("#icon_size").bind('keyup mouseup focus', function() {
 		icon.css('width', $(this).val() + 'px');
+		$('.colorpicker').css('display', 'none');
 	})
+
 
 })(jQuery);
