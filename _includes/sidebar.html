@@ -5,14 +5,33 @@
 
   <div id="preview">
     <select>
-      <option>option</option>
-      <option>option</option>
-      <option>option</option>
+      <option>placeholder option 1</option>
+      <option>placeholder option 2</option>
+      <option>placeholder option 3</option>
     </select>
   </div>
 
   <div id="options">
-    <input type="text" id="color" value="#333333">
+
+    <div class="control-group" data-control-group="icon_color">
+      <div class="control-label">
+        <label for="icon_color">icon color:</label>
+      </div>
+      <div class="control-input">
+        <input type="text" name="icon_color" value="#6d6be0" id="icon_color">
+        <div class="color-view"></div>
+      </div>
+    </div>
+
+    <div class="control-group" data-control-group="icon_size">
+      <div class="control-label">
+        <label for="icon_size">icon size:</label>
+      </div>
+      <div class="control-input">
+        <input type="number" name="icon_size" id="icon_size" value="16px">
+      </div>
+    </div>
+
   </div>
 
 </div>

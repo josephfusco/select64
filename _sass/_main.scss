@@ -40,7 +40,7 @@
 
 	&:hover,
 	&:focus {
-		opacity: 0.7;
+		opacity: 0.6;
 	}
 
 	&:active {
@@ -53,6 +53,9 @@
 		height: auto;
 		margin: 0 auto;
 		display: block;
+		body.static-fill & {
+			fill: $color--primary;
+		}
 	}
 
 }

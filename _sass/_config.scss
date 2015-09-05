@@ -5,10 +5,11 @@
 $black						: #2e353b;
 $medium-black				: #3e474f;
 $light-black				: #576366;
-$gray						: #60676d;
+$gray						: #767B7F; //#60676d;
 $light-gray					: #edeff0;
 $white						: #FFF;
 $blue						: #2E7DFF;
+$purple						: #6d6be0;
 
 // Color Assignment
 //
@@ -16,8 +17,8 @@ $color--main-bg				: $light-gray;
 $color--main-txt			: $light-black;
 $color--sidebar-bg  		: $medium-black;
 $color--sidebar-txt			: $gray;
-$color--active				: $blue;
+$color--primary				: $purple;
 
 // Layout
 //
-$sidebar-width      		: 300px;
+$sidebar-width      		: 400px;
