@@ -22,8 +22,4 @@
 		$('#icon_color').trigger('click');
 	});
 
-	$(document).ready(function() {
-		$('.item-wrap svg').attr('fill', '');
-	});
-
 })(jQuery);

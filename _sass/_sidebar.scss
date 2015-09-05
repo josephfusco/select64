@@ -14,14 +14,19 @@
     overflow-y: auto;
 
     h1 {
+        margin-top: 30px;
         margin-bottom: 0;
-        font-weight: 300;
+        font-weight: 700;
+
+        span {
+            font-weight: 100;
+        }
     }
 
     h2 {
         margin: 0;
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     a {
@@ -50,9 +55,11 @@
 }
 
 #preview {
-    margin-top: 20px;
+    margin: 50px 0;
+
     select {
         width: 100%;
+        max-width: 300px;
         height: 40px;
         background: none;
         -webkit-appearance: none;
@@ -74,7 +81,7 @@
 }
 
 .control-label {
-    padding: 5px 10px;
+    padding: 7px 10px;
     text-align: right;
     width: 30%;
     float: left;
