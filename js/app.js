@@ -17,17 +17,22 @@
 			$('.color-view').css('background-color', '#' + hex);
 			$('#icon_color').val('#' + hex);
 		}
-	});
+	})
 
 	// open the color picker when the color preview is clicked
 	$('.color-view').click(function() {
 		$('#icon_color').trigger('click');
-	});
+	})
 
 	// prepare svg for rasterization
 	$(document).ready(function() {
 		icon.removeAttr('xmlns');
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
-	});
+	})
+
+	// when icon size is changed
+	$("#icon_size").bind('keyup mouseup', function() {
+		icon.css('width', $(this).val() + 'px');
+	})
 
 })(jQuery);
