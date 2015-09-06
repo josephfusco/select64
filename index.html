@@ -7,11 +7,11 @@ title: Home
 {% for icon in site.icons %}
 	<li>
 
-		<div class="item-wrap">
+		<a href="#" class="item-wrap" title="{{ icon.name }}">
 
-			<a href="#" class="icon" title="{{ icon.name }}">{{ icon.content }}</a>
+			<div class="icon">{{ icon.content }}</div>
 
-		</div>
+		</a>
 
 	</li>
 {% endfor %}

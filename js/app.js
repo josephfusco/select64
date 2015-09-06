@@ -41,5 +41,12 @@
 		$('.colorpicker').css('display', 'none');
 	})
 
+	// when icon card is clicked
+	$('.item-wrap').on('click', function() {
+		$('.item-wrap').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	})
+
 
 })(jQuery);
