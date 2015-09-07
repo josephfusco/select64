@@ -2,6 +2,7 @@
 
 	var icon = $('.item-wrap svg');
 	var initial_color = '#6d6be0';
+	var canvas = $('#canvas');
 
 	$('#icon_color').ColorPicker({
 		color: initial_color,
@@ -59,13 +60,17 @@
 		$('.item-wrap').removeClass('active');
 		$(this).addClass('active');
 
+		// convert svg to string for canvg
 		var svg = $(this).find('svg').prop('outerHTML');
 
-		console.log(svg);
+		// output icon to canvas
+		canvg('canvas', svg)
 
-		canvg('canvas', svg, {
-			log: true
-		})
+		// output a png
+		var canvas = document.getElementById("canvas");
+		var img = canvas.toDataURL("image/png");
+
+		console.log(img);
 
 		return false;
 	})
