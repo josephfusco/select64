@@ -8,6 +8,12 @@
 	var img64 = '';
 	var code = '';
 
+	var demo_html = '';
+	var demo_css = '';
+	var demo_js = '';
+	var codepen_obj = '';
+
+
 	$('#icon_color').ColorPicker({
 		color: initial_color,
 		onSubmit: function(hsb, hex, rgb, el) {
@@ -74,16 +80,23 @@
 		var canvas = document.getElementById("canvas");
 		img64 = canvas.toDataURL("image/png");
 
+		// change out preview background (everything is already set in stylesheet - will need to by fully dynamic for future options)
 		preview.css('background-image', 'url(' + img64 + ')');
 
-		code = "background-image: url(" + img64 + ");\n";
-		code += "background-repeat: no-repeat;\n";
-	    code += "background-position: center right 10px;\n";
-	    code += "-webkit-appearance: none;\n";
-	    code += "-moz-appearance: none;\n";
-	    code += "appearance: none;\n";
-	    code += "border: none;\n";
-	    code += "height: 40px;\n";
+		// build output code
+		code = "\tbackground-image: url(" + img64 + ");\n";
+		code += "\tbackground-repeat: no-repeat;\n";
+		code += "\tbackground-color: #FFFFFF;\n";
+	    code += "\tbackground-position: center right 10px;\n";
+	    code += "\t-webkit-appearance: none;\n";
+	    code += "\t-moz-appearance: none;\n";
+	    code += "\tappearance: none;\n";
+	   	code += "\tcursor: pointer;\n";
+	    code += "\tborder: 0;\n";
+	   	code += "\tborder-radius: 0;\n";
+	    code += "\theight: 40px;\n";
+	    code += "\twidth: 100%;\n";
+	    code += "\tpadding: 10px;";
 
 		$('#output').val(code);
 
@@ -91,6 +104,41 @@
 		setTimeout(function() {
 			$('#notification').remove();
 		}, 1100);
+
+		// prepare generated code to be sent to codepen (put in element)
+		// build html
+		demo_html = "<div class='container'>\n";
+		demo_html += "\t<select>\n";
+		demo_html += "\t\t<option value='select64-preview-a'>select64 preview option A</option>\n";
+		demo_html += "\t\t<option value='select64-preview-b'>select64 preview option B</option>\n";
+		demo_html += "\t\t<option value='select64-preview-c'>select64 preview option C</option>\n";
+		demo_html += "\t</select>\n";
+		demo_html += "</div>\n";
+
+		// build css
+		demo_css = "select {\n" + code + "\n}\n\n";
+		demo_css += "/* demo purposes */\n";
+		demo_css += ".container {\n";
+		demo_css += "\tmax-width: 300px;\n";
+		demo_css += "\tmargin: 0 auto\n";
+		demo_css += "}\n\n";
+		demo_css += "html {display:table;width:100%;height:100%;}body{background-color:#222;display:table-cell;vertical-align:middle;text-align:center;}";
+
+		// build js
+		demo_js = "/*\n*\n* Created with http://select64.josephfus.co/\n*\n*/"
+
+		// Send data to codepen form
+		codepen_obj = {
+			"title": "test",
+			"description": "Created with http://select64.josephfus.co/",
+			"html": demo_html,
+			"css": demo_css,
+			"js": demo_js
+		}
+
+		console.log(JSON.stringify(codepen_obj));
+
+		$('#codepen_form_data').val(JSON.stringify(codepen_obj));
 
 		return false;
 	})

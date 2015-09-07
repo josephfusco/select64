@@ -34,7 +34,13 @@
       <textarea id="output"></textarea>
     </div>
 
-<!--     <a id="copy_btn" class="btn" href="#">Get Code</a> -->
+    <div class="control-group">
+      <form id="codepen_form" action="http://codepen.io/pen/define" method="POST" target="_blank">
+        <input id="codepen_form_data" type="hidden" name="data" value='{"title": "New Pen!", "html": "<div>Hello, World!</div>"}'>
+        <input id="codepen_btn" class="btn" type="submit" value="View On Codepen">
+      </form>
+    </div>
+
 
     <canvas id="canvas" class="hidden"></canvas>
 

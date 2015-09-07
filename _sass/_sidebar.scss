@@ -61,8 +61,12 @@
         position: relative;
         z-index: 1;
         color: $white;
-        padding: 9px 40px;
+        font-size: 16px;
+        padding: 12px 40px;
         margin-top: 50px;
+        border: 0;
+        cursor: pointer;
+
         &:hover,
         &:focus {
             background-color: lighten($color--primary, 7%);
