@@ -85,7 +85,8 @@
 		preview.css('background-image', 'url(' + img64 + ')');
 
 		// build output code
-		code = "\tbackground-image: url(" + img64 + ");\n";
+		code = "select {\n"
+		code += "\tbackground-image: url(" + img64 + ");\n";
 		code += "\tbackground-repeat: no-repeat;\n";
 		code += "\tbackground-color: #FFFFFF;\n";
 	    code += "\tbackground-position: center right 10px;\n";
@@ -97,7 +98,11 @@
 	   	code += "\tborder-radius: 0;\n";
 	    code += "\theight: 40px;\n";
 	    code += "\twidth: 100%;\n";
-	    code += "\tpadding: 10px;";
+	    code += "\tpadding: 10px;\n";
+	    code += "}\n\n";
+	    code += "select::-ms-expand {\n";
+	    code += "\tdisplay: none;\n";
+	    code += "}\n\n";
 
 		$('#output').val(code);
 
@@ -117,7 +122,7 @@
 		demo_html += '</div>\n';
 
 		// build css
-		demo_css = "select {\n" + code + "\n}\n\n";
+		demo_css = code;
 		demo_css += "/* demo purposes */\n";
 		demo_css += ".container {\n";
 		demo_css += "\tmax-width: 300px;\n";
