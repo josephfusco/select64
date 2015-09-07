@@ -1,9 +1,10 @@
 (function($) {
 
 	var icon = $('.item-wrap svg');
+	var initial_color = '#6d6be0';
 
 	$('#icon_color').ColorPicker({
-		color: '#6d6be0',
+		color: initial_color,
 		onSubmit: function(hsb, hex, rgb, el) {
 			$(el).ColorPickerHide();
 			$(el).val('#' + hex);
@@ -33,6 +34,9 @@
 	$(document).ready(function() {
 		icon.removeAttr('xmlns');
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+		// set initial fill
+		icon.attr('fill', initial_color);
 
 		// set inital svg size
 		icon.attr({
