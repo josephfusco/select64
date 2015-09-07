@@ -27,3 +27,10 @@ html {
 a {
 	text-decoration: none;
 }
+
+textarea {
+  resize: none;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: scroll;
+}

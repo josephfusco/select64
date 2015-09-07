@@ -6,6 +6,7 @@
 	var preview = $('#preview select');
 	var notification = $('#notification');
 	var img64 = '';
+	var code = '';
 
 	$('#icon_color').ColorPicker({
 		color: initial_color,
@@ -75,19 +76,23 @@
 
 		preview.css('background-image', 'url(' + img64 + ')');
 
-		return false;
-	})
+		code = "background-image: url(" + img64 + ");\n";
+		code += "background-repeat: no-repeat;\n";
+	    code += "background-position: center right 10px;\n";
+	    code += "-webkit-appearance: none;\n";
+	    code += "-moz-appearance: none;\n";
+	    code += "appearance: none;\n";
+	    code += "border: none;\n";
+	    code += "height: 40px;\n";
 
-	// when get code button is clicked
-	$('#copy_btn').on('click', function() {
+		$('#output').val(code);
 
-		$('body').append('<div id="notification" class="active">Copied!</div>');
+		$('#sidebar').append('<div id="notification" class="active">Code Generated!</div>');
 		setTimeout(function() {
 			$('#notification').remove();
 		}, 1500);
 
 		return false;
 	})
-
 
 })(jQuery);

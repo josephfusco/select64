@@ -58,6 +58,8 @@
         display: inline-block;
         background-color: $color--primary;
         text-transform: uppercase;
+        position: relative;
+        z-index: 1;
         color: $white;
         padding: 9px 40px;
         margin-top: 50px;
@@ -75,7 +77,6 @@
         width: 100%;
         max-width: 260px;
         height: 40px;
-        background-color: $white;
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABB0lEQVRIS+2VzQ2CQBBGv1HkTAlQgZagFWgJciUxoQNbIDHxqiVoBVqCVkALntFkzGIWF/nZ4cCFyGnDbt6bb3YXCD0/1DMff4G1wwNr0SZK1wxaOi6HSRI8rPmNBVGUzkagLYHPu31w1FNFixQcRAc1wYyb4/JCKlHwMdEFgJeDmUMtyQUmXJulkgr8C8glWnAC0fK3JTZJI/yTQrVqlQviOPVeT1wJNJVK2uAMvjsTzFWLiz3oIpHCVbGleyCRZBn80oYakc3KK6dIv7BJiOAXp8UCrySQSOruRl3ljQm6StrgjQmkEhvcKmg7whK4SFAnkcLFAlOixvoSST6GA/sfSCJ3XfMGfti6GSsb25QAAAAASUVORK5CYII=);
         background-repeat: no-repeat;
         background-position: center right 10px;
@@ -130,5 +131,16 @@
 
 #canvas {
     display: none;
+    height: 0;
+    width: 0;
+    position: relative;
+    z-index: -1;
 }
 
+textarea#output {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: monospace;
+}
