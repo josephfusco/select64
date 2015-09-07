@@ -28,16 +28,25 @@
 		$('#icon_color').trigger('click');
 	})
 
-	// prepare svg for rasterization
+
+	// clean svg and prepare for rasterization
 	$(document).ready(function() {
 		icon.removeAttr('xmlns');
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
+		// set inital svg size
+		icon.attr({
+			width: '24px',
+			height: '24px'
+		});
 	})
 
 	// when icon size is changed
 	$("#icon_size").bind('keyup mouseup focus', function() {
-		icon.css('width', $(this).val() + 'px');
+		icon.attr({
+			width: $(this).val() + 'px',
+			height: $(this).val() + 'px'
+		});
 		$('.colorpicker').css('display', 'none');
 	})
 
@@ -45,8 +54,16 @@
 	$('.item-wrap').on('click', function() {
 		$('.item-wrap').removeClass('active');
 		$(this).addClass('active');
+
+		var svg = $(this).find('svg').prop('outerHTML');
+
+		console.log(svg);
+
+		canvg('canvas', svg, {
+			log: true
+		})
+
 		return false;
 	})
-
 
 })(jQuery);
