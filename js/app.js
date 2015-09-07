@@ -87,10 +87,10 @@
 
 		$('#output').val(code);
 
-		$('#sidebar').append('<div id="notification" class="active">Code Generated!</div>');
+		$('#sidebar').prepend('<div id="notification" class="active">Code Generated!</div>');
 		setTimeout(function() {
 			$('#notification').remove();
-		}, 1500);
+		}, 1100);
 
 		return false;
 	})

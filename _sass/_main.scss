@@ -83,10 +83,16 @@
 	font-weight: 700;
 	color: $color--primary;
 	pointer-events: none;
+	text-shadow: 0 0 6px rgba($black,.2);
 	@include transform(translateZ(0));
 
 	&.active {
 		@include animation(1.1s flyby forwards ease-out);
+
+		~ .sidebar__inner textarea {
+			color: $color--sidebar-txt;
+			@include transition(all 0s ease);
+		}
 	}
 }
 
