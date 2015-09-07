@@ -2,7 +2,9 @@
 
 Custom base64 icons for native select elements.
 
-## Icon Contribution
+## Contributing
+
+### Icons
 
 Drop your `.svg` icons inside of `_icons/`. Be sure to add YAML front matter to the individual svg files with an icon name assigned.
 
@@ -17,3 +19,7 @@ name: icon-name
 ```
 
 That's it! Jekyll will add automatically add it to the collection.
+
+### Development
+
+Any help whatsoever would be greatly appreciated! Feel free to submit a pull request or [open an issue](https://github.com/josephfusco/select64/issues/new) for any other feedback.
