@@ -34,3 +34,13 @@ textarea {
   word-wrap: normal;
   overflow-x: scroll;
 }
+
+::-moz-selection {
+    color: $color--primary;
+    background: lighten($color--primary, 10%);
+}
+
+::selection {
+    color: $color--primary;
+    background: lighten($color--primary, 10%);
+}
