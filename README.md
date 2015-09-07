@@ -6,7 +6,7 @@ Custom base64 icons for native select elements.
 
 ### Icons
 
-Drop your `.svg` icons inside of `_icons/`. Be sure to add YAML front matter to the individual svg files with an icon name assigned.
+Drop your `.svg` icons inside of `_icons/`. Be sure to add YAML front matter to the individual svg files with an icon name assigned. It's basically just a namespace right now as front matter is required for Jekyll collections. Once there is a substantial amount of icons the front matter will be used for tagging icons to allow filters.
 
 ```
 ---
