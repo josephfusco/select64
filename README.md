@@ -1,6 +1,6 @@
 # select64
 
-Custom base64 icons for native select elements.
+Quickly generate variations of common `<select>` backgrounds.
 
 ## Contributing
 
@@ -18,8 +18,16 @@ name: icon-name
 </svg>
 ```
 
-That's it! Jekyll will add automatically add it to the collection.
+That's it! Jekyll will automatically add it to the collection.
 
 ### Development
 
 Any help whatsoever would be greatly appreciated! Feel free to submit a pull request or [open an issue](https://github.com/josephfusco/select64/issues/new) for any other feedback.
+
+### Overiew On How It Works
+
+By utilizing Jekyll collections, we can loop through all of the svg icons from the `_icons/` directory. The user manipulates the svg width, height, and fill with jQuery. We are using [canvg](https://github.com/gabelerner/canvg) to render the svg on Canvas, and then get the base64 encoded png from there.
+
+## License
+
+MIT
