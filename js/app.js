@@ -43,6 +43,7 @@
 
 	// clean svg and prepare for rasterization
 	$(document).ready(function() {
+
 		icon.removeAttr('xmlns');
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
@@ -107,13 +108,13 @@
 
 		// prepare generated code to be sent to codepen (put in element)
 		// build html
-		demo_html = "<div class='container'>\n";
-		demo_html += "\t<select>\n";
-		demo_html += "\t\t<option value='select64-preview-a'>select64 preview option A</option>\n";
-		demo_html += "\t\t<option value='select64-preview-b'>select64 preview option B</option>\n";
-		demo_html += "\t\t<option value='select64-preview-c'>select64 preview option C</option>\n";
-		demo_html += "\t</select>\n";
-		demo_html += "</div>\n";
+		demo_html = '<div class="container">\n';
+		demo_html += '\t<select>\n';
+		demo_html += '\t\t<option value="select64-preview-a">select64 preview option A</option>\n';
+		demo_html += '\t\t<option value="select64-preview-b">select64 preview option B</option>\n';
+		demo_html += '\t\t<option value="select64-preview-c">select64 preview option C</option>\n';
+		demo_html += '\t</select>\n';
+		demo_html += '</div>\n';
 
 		// build css
 		demo_css = "select {\n" + code + "\n}\n\n";
