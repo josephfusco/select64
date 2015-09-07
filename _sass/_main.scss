@@ -69,3 +69,40 @@
 	max-width: 600px;
 	margin: 0 auto;
 }
+
+#notification {
+	padding: 40px;
+	position: fixed;
+	z-index: 1;
+	top: 40%;
+	left: 0;
+	right: 0;
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 60px;
+	font-weight: 700;
+	color: $color--primary;
+	pointer-events: none;
+	@include transform(translateZ(0));
+
+	&.active {
+		@include animation(1.3s flyby forwards ease-out);
+	}
+}
+
+@include keyframes(flyby) {
+	0% {
+		@include transform(translateX(30%));
+		@include opacity(0);
+	}
+
+	10%, 90% {
+		@include opacity(1);
+	}
+
+	100% {
+		@include transform(translateX(50%));
+		@include opacity(0);
+	}
+
+}

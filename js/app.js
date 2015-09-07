@@ -4,6 +4,8 @@
 	var initial_color = '#6d6be0';
 	var canvas = $('#canvas');
 	var preview = $('#preview select');
+	var notification = $('#notification');
+	var img64 = '';
 
 	$('#icon_color').ColorPicker({
 		color: initial_color,
@@ -69,11 +71,23 @@
 
 		// output a png
 		var canvas = document.getElementById("canvas");
-		var img64 = canvas.toDataURL("image/png");
+		img64 = canvas.toDataURL("image/png");
 
 		preview.css('background-image', 'url(' + img64 + ')');
 
 		return false;
 	})
+
+	// when get code button is clicked
+	$('#copy_btn').on('click', function() {
+
+		$('body').append('<div id="notification" class="active">Copied!</div>');
+		setTimeout(function() {
+			$('#notification').remove();
+		}, 1500);
+
+		return false;
+	})
+
 
 })(jQuery);
