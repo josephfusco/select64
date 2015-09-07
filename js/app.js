@@ -3,6 +3,7 @@
 	var icon = $('.item-wrap svg');
 	var initial_color = '#6d6be0';
 	var canvas = $('#canvas');
+	var preview = $('#preview select');
 
 	$('#icon_color').ColorPicker({
 		color: initial_color,
@@ -68,9 +69,9 @@
 
 		// output a png
 		var canvas = document.getElementById("canvas");
-		var img = canvas.toDataURL("image/png");
+		var img64 = canvas.toDataURL("image/png");
 
-		console.log(img);
+		preview.css('background-image', 'url(' + img64 + ')');
 
 		return false;
 	})
