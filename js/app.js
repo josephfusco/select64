@@ -149,4 +149,9 @@
 		return false;
 	})
 
+	// hide some things until page loads
+	$(window).load(function() {
+		$("body").removeClass("preload");
+	});
+
 })(jQuery);

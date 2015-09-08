@@ -36,8 +36,15 @@
 	display: table-cell;
 	vertical-align: middle;
 	cursor: pointer;
-	@include transition(background-color 0.2s ease-out);
+	@include transition(all 0.2s ease-out);
 	box-shadow: 0 2px 0 0 rgba(0,0,0,.1);
+	@include transform(scale(1));
+	@include opacity(1);
+
+	body.preload & {
+		@include transform(scale(0));
+		@include opacity(0);
+	}
 
 	&:hover,
 	&:focus {
@@ -74,7 +81,7 @@
 	padding: 40px;
 	position: absolute;
 	z-index: 1;
-	top: 410px;
+	top: 360px;
 	left: 0;
 	right: 0;
 	display: inline-block;
