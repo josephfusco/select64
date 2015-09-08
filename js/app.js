@@ -32,6 +32,9 @@
 			current_icon_color = '#' + hex;
 		}
 	})
+	$('#icon_color_view').on('click',function(){
+		$('#icon_color').trigger('click');
+	})
 
 	$('#bg_color').ColorPicker({
 		color: current_bg_color,
@@ -49,6 +52,9 @@
 			$('#bg_color').val('#' + hex);
 			current_bg_color = '#' + hex;
 		}
+	})
+	$('#bg_color_view').on('click',function(){
+		$('#bg_color').trigger('click');
 	})
 
 	// clean svg and prepare for rasterization
