@@ -1,7 +1,8 @@
 (function($) {
 
 	var icon = $('.item-wrap svg');
-	var initial_color = '#6d6be0';
+	var current_bg_color = '#ffffff';
+	var current_icon_color = '#6d6be0';
 	var canvas = $('#canvas');
 	var preview = $('#preview select');
 	var notification = $('#notification');
@@ -15,7 +16,7 @@
 
 
 	$('#icon_color').ColorPicker({
-		color: initial_color,
+		color: current_icon_color,
 		onSubmit: function(hsb, hex, rgb, el) {
 			$(el).ColorPickerHide();
 			$(el).val('#' + hex);
@@ -26,20 +27,29 @@
 		onChange: function(hsb, hex, rgb, el) {
 			$('body').removeClass('static-fill');
 			icon.attr('fill', '#' + hex);
-			$('.color-view').css('background-color', '#' + hex);
+			$('#icon_color_view').css('background-color', '#' + hex);
 			$('#icon_color').val('#' + hex);
+			current_icon_color = '#' + hex;
 		}
 	})
 
-	$('#icon_color').bind('click focus', function() {
-		$('.colorpicker').css('display', 'block');
+	$('#bg_color').ColorPicker({
+		color: current_bg_color,
+		onSubmit: function(hsb, hex, rgb, el) {
+			$(el).ColorPickerHide();
+			$(el).val('#' + hex);
+		},
+		onBeforeShow: function() {
+			$(this).ColorPickerSetColor(this.value);
+		},
+		onChange: function(hsb, hex, rgb, el) {
+			$('body').removeClass('static-fill');
+			$('.item-wrap').css('background-color', '#' + hex);
+			$('#bg_color_view').css('background-color', '#' + hex);
+			$('#bg_color').val('#' + hex);
+			current_bg_color = '#' + hex;
+		}
 	})
-
-	// open the color picker when the color preview is clicked
-	$('.color-view').bind('click focus', function() {
-		$('#icon_color').trigger('click');
-	})
-
 
 	// clean svg and prepare for rasterization
 	$(document).ready(function() {
@@ -48,7 +58,7 @@
 		icon.attr('xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
 		// set initial fill
-		icon.attr('fill', initial_color);
+		icon.attr('fill', current_icon_color);
 
 		// set inital svg size
 		icon.attr({
@@ -71,6 +81,9 @@
 		$('.item-wrap').removeClass('active');
 		$(this).addClass('active');
 
+		// send background color to preview area
+		preview.css('background-color', current_bg_color);
+
 		// convert svg to string for canvg
 		var svg = $(this).find('svg').prop('outerHTML');
 
@@ -88,7 +101,7 @@
 		code = "select {\n"
 		code += "\tbackground-image: url(" + img64 + ");\n";
 		code += "\tbackground-repeat: no-repeat;\n";
-		code += "\tbackground-color: #FFFFFF;\n";
+		code += "\tbackground-color: " + current_bg_color + ";\n";
 	    code += "\tbackground-position: center right 10px;\n";
 	    code += "\t-webkit-appearance: none;\n";
 	    code += "\t-moz-appearance: none;\n";

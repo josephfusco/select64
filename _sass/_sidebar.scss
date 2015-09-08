@@ -112,14 +112,15 @@
 .control-label {
     padding: 7px 10px;
     text-align: right;
-    width: 30%;
+    font-size: 14px;
+    width: 40%;
     float: left;
 }
 
 .control-input {
     float: left;
     text-align: left;
-    width: 70%;
+    width: 60%;
     input {
         width: 100%;
     }
@@ -134,10 +135,14 @@
     margin-left: 8px;
     cursor: pointer;
     border: 1px solid $color--sidebar-txt;
+}
 
-    body.static-fill & {
-        background-color: $color--primary;
-    }
+#icon_color_view {
+    background-color: $color--primary;
+}
+
+#bg_color_view {
+    background-color: $white;
 }
 
 #canvas {
