@@ -18,7 +18,7 @@ name: icon-name
 </svg>
 ```
 
-That's it! Jekyll will automatically add it to the collection.
+This will automatically be added to the collection.
 
 ### Development
 
