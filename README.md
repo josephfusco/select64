@@ -30,4 +30,4 @@ By utilizing Jekyll collections, we can loop through all of the svg icons from t
 
 ## License
 
-MIT © [Joseph Fusco](http://josephfus.co)
+MIT © [Joseph Fusco](http://josephfus.co?ref=gh-license)
