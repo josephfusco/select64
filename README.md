@@ -1,5 +1,7 @@
 # select64
 
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+
 Quickly generate variations of common `<select>` backgrounds.
 
 ## Contributing
@@ -27,7 +29,3 @@ Any help whatsoever would be greatly appreciated! Feel free to submit a pull req
 ### Overiew On How It Works
 
 By utilizing Jekyll collections, we can loop through all of the svg icons from the `_icons/` directory. The user manipulates the svg width, height, and fill with jQuery. We are using [canvg](https://github.com/gabelerner/canvg) to render the svg on Canvas, and then get the base64 encoded png from there.
-
-## License
-
-MIT © [Joseph Fusco](http://mit.josephfus.co/?year=2016)
