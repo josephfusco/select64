@@ -1,6 +1,4 @@
-# select64
-
-[![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+# select64 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 
 Quickly generate variations of common `<select>` backgrounds.
 
