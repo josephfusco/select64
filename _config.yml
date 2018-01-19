@@ -4,17 +4,11 @@ title:            		select64
 baseurl: 				""
 
 permalink:           	pretty
-relative_permalinks: 	true
 
 collections:
  - icons
 
-# Dependencies
-
-markdown:         		redcarpet
-highlighter:      		pygments
-
-# SCSS
+markdown:         		kramdown
 
 sass:
   sass_dir: _sass
